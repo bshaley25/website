@@ -17,7 +17,9 @@ jobs:
       run: sudo apt install hugo
 
     - name: Build Hugo site
-      run: hugo
+      run: |
+        cd website
+        hugo
 
     - name: Set AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
