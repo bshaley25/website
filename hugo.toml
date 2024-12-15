@@ -1,3 +1,38 @@
-baseURL = 'https://example.org/'
+baseURL = 'bradleyhaley.com'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = "Bradley's Website"
+theme = 'PaperMod'
+
+[params]
+description = "Welcome to my site!"
+hideFooter = "true"
+
+[params.profileMode]
+enabled = true
+title = "Welcome!"
+subtitle = "Check out my links below or my CV in the top right!"
+
+[[params.socialIcons]]
+  name = "github"
+  url = "https://github.com/bshaley25"
+
+[[params.socialIcons]]
+  name = "linkedin"
+  url = "https://www.linkedin.com/in/bshaley25/"
+
+[[params.socialIcons]]
+  name = "medium"
+  url = "https://medium.com/@bshaley25"
+
+[params.assets]
+  favicon = "favicon_io/favicon.ico"
+  favicon16x16 = "favicon_io/favicon16x16"
+  favicon32x32 = "favicon_io/favicon32x32"
+  apple_touch_icon = "<link / absolute url>"
+  safari_pinned_tab = "<link / absolute url>"
+
+
+[[menu.main]]
+  name = "CV"
+  url = "/cv/"
+  weight = 2
