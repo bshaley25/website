@@ -10,16 +10,25 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v3
+    
+    - uses: actions/checkout@v4
+      with:
+        submodules: true  # Fetch Hugo themes
+        fetch-depth: 0
 
-    - name: Install Hugo
-      run: sudo apt install hugo
+    - name: Setup Hugo
+      uses: peaceiris/actions-hugo@v3
+      with:
+        hugo-version: '0.139.0'
+
+    - name: print
+      run: pwd
+
+    - name: ls
+      run: ls -a
 
     - name: Build Hugo site
-      run: |
-        cd website
-        hugo
+      run: hugo --config hugo.toml
 
     - name: Set AWS credentials
       uses: aws-actions/configure-aws-credentials@v4
